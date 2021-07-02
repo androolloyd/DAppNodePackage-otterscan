@@ -14,6 +14,25 @@ services:
       - "data:/root/.local/share"
     environment:
       ERIGON_EXTRA_OPTS: ""
+  scanner:
+    build: &ref_0
+      context: otterscan
+    ports:
+      - "3000"
+    command:
+      - npm
+      - run
+      - serve
+    image: "scanner.erigon.dnp.dappnode.eth:0.1.0"
+  4bytes:
+    ports:
+      - "3001"
+    build: *ref_0
+    command:
+      - npm
+      - run
+      - serve-4bytes
+    image: "4bytes.erigon.dnp.dappnode.eth:0.1.0"
   rpcdaemon:
     image: "rpcdaemon.erigon.dnp.dappnode.eth:0.1.0"
     build:
@@ -21,7 +40,7 @@ services:
       args:
         UPSTREAM_VERSION: v2021.07.01
     environment:
-      RPCDAEMON_EXTRA_OPTS: "--http.api=eth,debug,net,web3"
+      RPCDAEMON_EXTRA_OPTS: "--http.api=eth,debug,net,web3,ots,erigon"
     restart: unless-stopped
 volumes:
   data: {}

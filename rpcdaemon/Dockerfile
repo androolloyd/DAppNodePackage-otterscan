@@ -9,15 +9,15 @@ ENV GIT_BRANCH=$git_branch
 # for linters to avoid warnings. we won't use linters in Docker anyway
 ENV LATEST_COMMIT="undefined"
 
-ARG UPSTREAM_VERSION 
+ARG UPSTREAM_VERSION
 
 RUN apk --no-cache add make gcc g++ linux-headers git bash ca-certificates libgcc libstdc++
 
 WORKDIR /app
 
-RUN git clone -b ${UPSTREAM_VERSION} --recurse-submodules -j8 https://github.com/ledgerwatch/erigon.git /app
+RUN git clone -b ${UPSTREAM_VERSION}-otterscan --recurse-submodules -j8 https://github.com/wmitsuda/erigon.git /app
 RUN go mod download
-RUN make all
+RUN make rpcdaemon
 
 FROM alpine:3.13
 
