@@ -15,6 +15,10 @@ services:
     environment:
       ERIGON_EXTRA_OPTS: ""
   scanner:
+    environment:
+      - REACT_APP_ERIGON_URL=http://erigon.dappnode:8545
+      - REACT_APP_ASSETS_URL=http://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets
+      - REACT_APP_FOUR_BYTES_URL=http://4bytes.erigon.dappnode:3002
     build: &ref_0
       context: otterscan
     ports:
