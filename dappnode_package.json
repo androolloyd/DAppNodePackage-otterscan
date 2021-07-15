@@ -16,7 +16,7 @@
   ],
   "links": {
     "homepage": "https://github.com/ledgerwatch/erigon",
-    "scanner": "http://scanner.erigon.dappnode:3000"
+    "scanner": "http://scanner.erigon.dappnode"
   },
   "mainService": "rpcdaemon",
   "license": "GLP-3.0",

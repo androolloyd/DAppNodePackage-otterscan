@@ -1,11 +1,14 @@
 version: "3.4"
+x-otterscan-version: &ref_1
+  UPSTREAM_VERSION: v2021.07.03
+x-erigon-version: &ref_0
+  UPSTREAM_VERSION: v2021.07.03
 services:
   erigon:
     image: "erigon.erigon.dnp.dappnode.eth:0.1.0"
     build:
       context: erigon
-      args:
-        UPSTREAM_VERSION: v2021.07.01
+      args: *ref_0
     ports:
       - "30303"
       - 30303/udp
@@ -16,33 +19,15 @@ services:
       ERIGON_EXTRA_OPTS: ""
   scanner:
     environment:
-      - REACT_APP_ERIGON_URL=http://erigon.dappnode:8545
-      - REACT_APP_ASSETS_URL=http://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets
-      - REACT_APP_FOUR_BYTES_URL=http://4bytes.erigon.dappnode:3002
-    build: &ref_0
-      context: otterscan
+      - "ERIGON_URL=http://erigon.dappnode:8545"
+    image: "otterscan/otterscan:v2021.07.03"
     ports:
-      - "3000"
-    command:
-      - npm
-      - run
-      - serve
-    image: "scanner.erigon.dnp.dappnode.eth:0.1.0"
-  4bytes:
-    ports:
-      - "3001"
-    build: *ref_0
-    command:
-      - npm
-      - run
-      - serve-4bytes
-    image: "4bytes.erigon.dnp.dappnode.eth:0.1.0"
+      - "80"
   rpcdaemon:
     image: "rpcdaemon.erigon.dnp.dappnode.eth:0.1.0"
     build:
       context: rpcdaemon
-      args:
-        UPSTREAM_VERSION: v2021.07.01
+      args: *ref_1
     environment:
       RPCDAEMON_EXTRA_OPTS: "--http.api=eth,debug,net,web3,ots,erigon"
     restart: unless-stopped
