@@ -1,4 +1,4 @@
-# Erigon
-Erigon DAppNodePackage
+# Otterscan
+Otterscan DAppNodePackage
 
-https://github.com/ledgerwatch/erigon
+https://github.com/wmitsuda/otterscan
