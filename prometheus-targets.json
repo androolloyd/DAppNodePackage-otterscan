@@ -1,22 +1,12 @@
 [
     {
         "labels": {
-            "package": "erigon.erigon.dnp.dappnode.eth",
-            "service": "erigon.erigon.dappnode",
+            "package": "rpcdaemon.otterscan.public.dappnode.eth",
+            "service": "rpcdaemon.otterscan.public.dappnode",
             "__metrics_path__": "/debug/metrics/prometheus"
         },
         "targets": [
-            "erigon.erigon.dappnode:6060"
-        ]
-    },
-    {
-        "labels": {
-            "package": "rpcdaemon.erigon.dnp.dappnode.eth",
-            "service": "rpcdaemon.erigon.dappnode",
-            "__metrics_path__": "/debug/metrics/prometheus"
-        },
-        "targets": [
-            "rpcdaemon.erigon.dappnode:6060"
+            "rpcdaemon.otterscan.public.dappnode:6060"
         ]
     }
 ]

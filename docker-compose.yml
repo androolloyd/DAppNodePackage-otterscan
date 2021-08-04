@@ -1,37 +1,19 @@
 version: "3.4"
-x-otterscan-version: &ref_0
-  UPSTREAM_VERSION: v2021.07.04
 services:
-  erigon:
-    image: "erigon.erigon.dnp.dappnode.eth:0.1.0"
-    build:
-      context: erigon
-      args: *ref_0
-    ports:
-      - "30303"
-      - 30303/udp
-      - "30304"
-      - 30304/udp
-    restart: unless-stopped
-    volumes:
-      - "data:/root/.local/share"
-    environment:
-      ERIGON_EXTRA_OPTS: ""
   scanner:
     image: "otterscan/otterscan:latest"
     environment:
-      - "ERIGON_URL=http://erigon.dappnode:8545"
+      - "ERIGON_URL=http://rpcdaemon.otterscan.public.dappnode:8545"
     ports:
       - "80"
   rpcdaemon:
-    image: "rpcdaemon.erigon.dnp.dappnode.eth:0.1.0"
     build:
       context: rpcdaemon
-      args: *ref_0
+      args:
+        UPSTREAM_VERSION: v2021.07.04
     environment:
       RPCDAEMON_EXTRA_OPTS: "--http.api=eth,debug,net,web3,ots,erigon"
     restart: unless-stopped
     ports:
       - "8545"
-volumes:
-  data: {}
+    image: "rpcdaemon.otterscan.public.dappnode.eth:0.1.0"

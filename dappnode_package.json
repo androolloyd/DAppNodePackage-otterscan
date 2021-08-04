@@ -1,30 +1,32 @@
 {
-  "name": "erigon.dnp.dappnode.eth",
+  "name": "otterscan.public.dappnode.eth",
   "version": "0.1.0",
-  "shortDescription": "Ethereum client on the efficiency frontier, written in Go - bundled with Otterscan and 4bytes",
-  "description": "Erigon is a next generation Ethereum client that introduces several new concepts:\n\n* A modular client design, enabling parallelized development of the client\n\n* New (`flat`) model of storing Ethereum state, allowing a lower disk footprint\n\n* Preprocessing of data outside of the storage engine, making database write operations faster by a magnitude\n\n* Staged synchronization technique, allowing very fast synchronization",
-  "upstreamVersion": "v2021.07.01",
-  "upstreamRepo": "ledgerwatch/erigon",
+  "shortDescription": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
+  "description": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
+  "upstreamVersion": "v2021.07.04",
+  "upstreamRepo": "wmitsuda/otterscan",
   "upstreamArg": "UPSTREAM_VERSION",
   "type": "service",
-  "chain": "ethereum",
+  "dependencies": {
+    "erigon.dnp.dappnode.eth": "^0.1.7"
+  },
   "categories": ["Developer tools"],
   "architectures": ["linux/amd64"],
-  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "author": "Andrew Redden <opensource@andrewredden.com> (https://github.com/androolloyd)",
   "contributors": [
-    "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)"
+    "Willian Mitsuda <wmitsuda@gmail.com> (https://github.com/wmitsuda)"
   ],
   "links": {
-    "homepage": "https://github.com/ledgerwatch/erigon",
-    "scanner": "http://scanner.erigon.dappnode"
+    "homepage": "https://github.com/wmitsuda/otterscan",
+    "scanner": "http://scanner.otterscan.public.dappnode"
   },
   "mainService": "rpcdaemon",
   "license": "GLP-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dappnode/DAppNodePackage-erigon.git"
+    "url": "git+https://github.com/androolloyd/DAppNodePackage-otterscan.git"
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-erigon/issues"
+    "url": "https://github.com/androolloyd/DAppNodePackage-otterscan/issues"
   }
 }
