@@ -10,7 +10,7 @@ services:
     build:
       context: rpcdaemon
       args:
-        UPSTREAM_VERSION: v2021.07.05-2
+        UPSTREAM_VERSION: v2021.07.05-5-otterscan
     environment:
       RPCDAEMON_EXTRA_OPTS: "--http.api=eth,debug,net,web3,ots,erigon"
     restart: unless-stopped
