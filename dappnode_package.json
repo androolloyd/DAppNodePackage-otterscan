@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "shortDescription": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
   "description": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
-  "upstreamVersion": "v2021.07.05-2",
-  "upstreamRepo": "wmitsuda/otterscan",
+  "upstreamVersion": "v2021.08.01",
+  "upstreamRepo": "wmitsuda/erigon",
   "upstreamArg": "UPSTREAM_VERSION",
   "type": "service",
   "dependencies": {
