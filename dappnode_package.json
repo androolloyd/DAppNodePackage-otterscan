@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "shortDescription": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
   "description": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
-  "upstreamVersion": "v2021.08.01",
+  "upstreamVersion": "v2021.11.03",
   "upstreamRepo": "wmitsuda/erigon",
   "upstreamArg": "UPSTREAM_VERSION",
   "type": "service",
   "dependencies": {
-    "erigon.dnp.dappnode.eth": "^0.1.7"
+    "erigon.dnp.dappnode.eth": "^0.1.14"
   },
   "categories": ["Developer tools"],
   "architectures": ["linux/amd64"],
