@@ -1,32 +1,45 @@
 {
   "name": "otterscan.public.dappnode.eth",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "shortDescription": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
   "description": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
-  "upstreamVersion": "v2021.11.03",
-  "upstreamRepo": "wmitsuda/erigon",
+  "upstreamVersion": "v2022.08.03",
+  "upstreamRepo": "wmitsuda/otterscan",
   "upstreamArg": "UPSTREAM_VERSION",
   "type": "service",
   "dependencies": {
-    "erigon.dnp.dappnode.eth": "^0.1.14"
+    "erigon.dnp.dappnode.eth": "^0.1.33"
   },
   "categories": ["Developer tools"],
   "architectures": ["linux/amd64"],
-  "author": "Andrew Redden <opensource@andrewredden.com> (https://github.com/androolloyd)",
+  "author": "Melen <melen_oss@proton.me> (https://github.com/melenxyz)",
   "contributors": [
-    "Willian Mitsuda <wmitsuda@gmail.com> (https://github.com/wmitsuda)"
+    "Willian Mitsuda <wmitsuda@gmail.com> (https://github.com/wmitsuda)",
+    "Andrew Redden <opensource@andrewredden.com> (https://github.com/androolloyd)"
   ],
   "links": {
     "homepage": "https://github.com/wmitsuda/otterscan",
-    "scanner": "http://scanner.otterscan.public.dappnode"
+    "Otterscan UI": "http://scanner.otterscan.public.dappnode"
   },
-  "mainService": "rpcdaemon",
+  "exposable": [
+    {
+      "name": "Otterscan UI",
+      "description": "WebUI for the Otterscan block explorer",
+      "serviceName": "otterscan",
+      "port": 80,
+      "exposeByDefault": false
+    }
+  ],
+  "mainService": "otterscan",
+  "disclaimer": {
+    "message": "When running erigon, make sure to enable the erigon, ots, eth APIs in addition to whatever cli options you are using to start erigon. It should at least look like this --http.api \"eth,erigon,ots,<your-other-apis>\""
+  },
   "license": "GLP-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/androolloyd/DAppNodePackage-otterscan.git"
+    "url": "git+https://github.com/melenxyz/DAppNodePackage-otterscan.git"
   },
   "bugs": {
-    "url": "https://github.com/androolloyd/DAppNodePackage-otterscan/issues"
+    "url": "https://github.com/melenxyz/DAppNodePackage-otterscan/issues"
   }
 }

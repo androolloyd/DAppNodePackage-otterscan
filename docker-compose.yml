@@ -3,17 +3,7 @@ services:
   scanner:
     image: "otterscan/otterscan:latest"
     environment:
-      - "ERIGON_URL=http://rpcdaemon.otterscan.public.dappnode:8545"
+      - "ERIGON_URL=http://erigon.dappnode:8545"
     ports:
       - "80"
-  rpcdaemon:
-    build:
-      context: rpcdaemon
-      args:
-        UPSTREAM_VERSION: v2021.10.03
-    environment:
-      RPCDAEMON_EXTRA_OPTS: "--http.api=eth,debug,net,web3,ots,erigon"
-    restart: unless-stopped
-    ports:
-      - "8545"
-    image: "rpcdaemon.otterscan.public.dappnode.eth:0.1.0"
+  
