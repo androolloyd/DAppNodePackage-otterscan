@@ -19,7 +19,7 @@
   ],
   "links": {
     "homepage": "https://github.com/wmitsuda/otterscan",
-    "Otterscan UI": "http://scanner.otterscan.public.dappnode"
+    "UI": "http://scanner.otterscan.public.dappnode"
   },
   "exposable": [
     {
