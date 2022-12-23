@@ -1,9 +1,9 @@
 {
   "name": "otterscan.public.dappnode.eth",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "shortDescription": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
   "description": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
-  "upstreamVersion": "v2022.12.01",
+  "upstreamVersion": "v1.30.0",
   "upstreamRepo": "wmitsuda/otterscan",
   "upstreamArg": "UPSTREAM_VERSION",
   "type": "service",
