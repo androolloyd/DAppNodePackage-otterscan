@@ -1,10 +1,10 @@
 {
   "name": "otterscan.public.dappnode.eth",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "shortDescription": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
   "description": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
   "upstreamVersion": "v1.30.0",
-  "upstreamRepo": "wmitsuda/otterscan",
+  "upstreamRepo": "otterscan/otterscan",
   "upstreamArg": "UPSTREAM_VERSION",
   "type": "service",
   "dependencies": {
@@ -18,8 +18,8 @@
     "Andrew Redden <opensource@andrewredden.com> (https://github.com/androolloyd)"
   ],
   "links": {
-    "homepage": "https://github.com/wmitsuda/otterscan",
-    "UI": "http://scanner.otterscan.public.dappnode"
+    "homepage": "https://github.com/otterscan/otterscan",
+    "ui": "http://scanner.otterscan.public.dappnode"
   },
   "exposable": [
     {
@@ -31,9 +31,7 @@
     }
   ],
   "mainService": "otterscan",
-  "disclaimer": {
-    "message": "When running erigon, make sure to enable the erigon, ots, eth APIs in addition to whatever cli options you are using to start erigon. It should at least look like this --http.api \"eth,erigon,ots,<your-other-apis>\""
-  },
+  
   "license": "GLP-3.0",
   "repository": {
     "type": "git",

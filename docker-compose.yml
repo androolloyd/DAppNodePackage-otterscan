@@ -3,7 +3,7 @@ services:
   scanner:
     image: "otterscan/otterscan:latest"
     environment:
-      - "ERIGON_URL=http://erigon.dappnode:8545"
+      ERIGON_URL: "http://erigon.dappnode:8545"
+      BEACON_API_URL: ""
     ports:
       - "80"
-  
