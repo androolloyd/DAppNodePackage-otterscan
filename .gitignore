@@ -2,3 +2,4 @@
 build_*
 .idea/
 .github/.DS_Store
+.env
