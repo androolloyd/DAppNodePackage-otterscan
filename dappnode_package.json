@@ -3,7 +3,7 @@
   "version": "0.2.2",
   "shortDescription": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
   "description": "A blazingly fast, local, Ethereum block explorer built on top of Erigon",
-  "upstreamVersion": "v1.30.0",
+  "upstreamVersion": "v1.32.0",
   "upstreamRepo": "otterscan/otterscan",
   "upstreamArg": "UPSTREAM_VERSION",
   "type": "service",
@@ -35,9 +35,9 @@
   "license": "GLP-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/melenxyz/DAppNodePackage-otterscan.git"
+    "url": "git+https://github.com/otterscan/DAppNodePackage-otterscan.git"
   },
   "bugs": {
-    "url": "https://github.com/melenxyz/DAppNodePackage-otterscan/issues"
+    "url": "https://github.com/otterscan/DAppNodePackage-otterscan/issues"
   }
 }
